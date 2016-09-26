@@ -1,5 +1,6 @@
 import QtQuick 2.5
 import QtQuick.Controls 2.0
+import Server.data 1.0
 
 ApplicationWindow {
     visible: true
@@ -47,5 +48,11 @@ ApplicationWindow {
             topMargin: 10
             rightMargin: 10
         }
+        onClicked: serverData.listenServer(portNumber.text)
     }
+
+    ServerData {
+        id: serverData
+    }
+
 }
